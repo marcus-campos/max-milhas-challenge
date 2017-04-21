@@ -1,0 +1,80 @@
+<?php
+    $msg = new \Milhas\Http\Session\Flash\Flash();
+    $msg->display();
+?>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="text-left">
+            <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#myModal">Adicionar foto</button>
+        </div>
+        <br>
+        <div class="card-box">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="m-t-0 header-title"><b>Gerenciar fotos</b></h4>
+
+                    <div class="p-20">
+                        <table class="table table-condensed m-0">
+
+                            <thead>
+
+                            <tr>
+                                <th></th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($this->view->photos as $photo): ?>
+                                <tr>
+                                    <th class="text-center">
+                                        <a href="<?=$photo['path']?>"><img src="<?=$photo['path']?>" alt="contact-img" title="contact-img" class="img-circle thumb-sm"></a>
+                                    </th>
+                                    <th><?=$photo['name']?></th>
+                                    <th><?=$photo['created_at']?></th>
+                                    <th><a href="/manager/destroy/<?=$photo['id']?>" class="table-action-btn"><i class="md md-close"></i></a></th>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" action="/manager/add" enctype="multipart/form-data">
+    <!-- sample modal content -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Adicionar foto</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="control-label">File style with custom icon</label>
+                            <input name="arquivo" type="file" class="filestyle" data-iconname="fa fa-cloud-upload" id="filestyle-6" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                            <div class="bootstrap-filestyle input-group">
+                                <span class="group-span-filestyle input-group-btn" tabindex="0">
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Savar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</form>
+

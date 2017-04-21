@@ -1,0 +1,5 @@
+<div class="fotorama" data-width="100%" data-height="85%">
+    <?php foreach ($this->view->photos as $photo): ?>
+        <img src="<?=$photo['path']?>">
+    <?php endforeach;?>
+</div>
