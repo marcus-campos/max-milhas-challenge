@@ -4,4 +4,4 @@
 
 ### Conteúdo
 
-Interface explicativas com informações sobre o software construido e seu autor.
+Interface explicativa com informações sobre o software construido e seu autor.
