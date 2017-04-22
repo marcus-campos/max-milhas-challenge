@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "milhas/framework",
-            "version": "v0.0.5",
+            "version": "v0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marcus-campos/milhas.git",
-                "reference": "2959d3171bb47fe3ee7c7014f8e0c1525c955bc2"
+                "reference": "c7823a5190dbbbfed8b1340d5dadc7ffed82f730"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marcus-campos/milhas/zipball/2959d3171bb47fe3ee7c7014f8e0c1525c955bc2",
-                "reference": "2959d3171bb47fe3ee7c7014f8e0c1525c955bc2",
+                "url": "https://api.github.com/repos/marcus-campos/milhas/zipball/c7823a5190dbbbfed8b1340d5dadc7ffed82f730",
+                "reference": "c7823a5190dbbbfed8b1340d5dadc7ffed82f730",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "maxmilhas",
                 "teste"
             ],
-            "time": "2017-04-21 14:15:21"
+            "time": "2017-04-21 21:01:39"
         }
     ],
     "packages-dev": [
