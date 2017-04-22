@@ -2,7 +2,7 @@
 
 Acesse o diretório da aplicação clonada, a seguir acesse o diretório `.../public`.
 
-Dentro do diretório `public` execute o seguinte comando
+Dentro do diretório `public` execute o seguinte comando:
 
 ```
 php -S [ip]:[port]

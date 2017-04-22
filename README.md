@@ -10,14 +10,14 @@ O resultado final pode ser acesso neste [link](http://maxmilhas.devyzi.com).
 
 - [Instalação](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/installation/README.md)
     - Clonando e instalando a aplicação
-- [Configuração](https://github.com/marcus-campos/max-milhas-challenge/blob/master/configuration/README.md)
+- [Configuração](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/configuration/README.md)
     - Configurando a aplicação
-- [Iniciar servidor](https://github.com/marcus-campos/max-milhas-challenge/blob/master/server/README.md)
+- [Iniciar servidor](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/server/README.md)
     - Iniciando o servidor built-in do PHP
-- [Guia de uso](https://github.com/marcus-campos/max-milhas-challenge/blob/master/usage/README.md)
-    - Explore the desktop and try out all the main applications
-- [Testes](https://github.com/marcus-campos/max-milhas-challenge/blob/master/tests/README.md)
-    - Accessing your Pi remotely via SSH, VNC or over the web
+- [Guia de uso](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/usage/README.md)
+    - Guia de como utilizar a aplicação
+- [Testes](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/tests/README.md)
+    - Execute testes com o PHPUnit
 
 
 # Milhas Framework
@@ -26,5 +26,5 @@ Mini framework desenvolvido para para demonstração de conhecimento e execuçã
 
 # Documentação
 
-- [Documentação](installation/README.md)
+- [Documentação](https://github.com/marcus-campos/milhas/blob/master/README.md)
     - Documentação geral 
