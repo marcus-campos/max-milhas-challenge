@@ -8,15 +8,15 @@ O resultado final pode ser acesso neste [link](http://maxmilhas.devyzi.com).
 ---
 # Conteúdo
 
-- [Instalação](installation/README.md)
+- [Instalação](https://github.com/marcus-campos/max-milhas-challenge/blob/master/documentation/installation/README.md)
     - Clonando e instalando a aplicação
-- [Configuração](configuration/README.md)
+- [Configuração](https://github.com/marcus-campos/max-milhas-challenge/blob/master/configuration/README.md)
     - Configurando a aplicação
-- [Iniciar servidor](server/README.md)
+- [Iniciar servidor](https://github.com/marcus-campos/max-milhas-challenge/blob/master/server/README.md)
     - Iniciando o servidor built-in do PHP
-- [Guia de uso](usage/README.md)
+- [Guia de uso](https://github.com/marcus-campos/max-milhas-challenge/blob/master/usage/README.md)
     - Explore the desktop and try out all the main applications
-- [Testes](remote-access/README.md)
+- [Testes](https://github.com/marcus-campos/max-milhas-challenge/blob/master/tests/README.md)
     - Accessing your Pi remotely via SSH, VNC or over the web
 
 
