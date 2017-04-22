@@ -15,3 +15,11 @@ Alguns guias simples para clonar e instalar o software.
 
 - [Clonar repositório](clone.md)
 - [Instalação de dependências](dependency-install.md)
+
+## Permissões
+
+Após a instalação execute o seguinte comando.
+
+```
+chmod 777 public/storage -R
+```
