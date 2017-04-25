@@ -44,7 +44,7 @@ class ManagerController extends Controller
      */
     public function destroy($values)
     {
-        $config = appMake(configPath('app.php'));
+        $config = include_once configPath('app.php');
         $msg = new Flash();
 
         if($config['DISPLAY_MODE'] != "READ_ONLY") {
