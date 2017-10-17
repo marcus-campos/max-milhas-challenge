@@ -44,22 +44,29 @@ class ManagerController extends Controller
      */
     public function destroy($values)
     {
+        $config = include_once configPath('app.php');
         $msg = new Flash();
-        $gallery = new Gallery();
 
-        if(count($photo = $gallery->find($values[1])) > 0) //Check find
-        {
-            if(deleteFile(publicPath($photo['path']))) { //Try to delete file
-                $gallery->delete($values[1]); //Delete database value
-                $msg->success('Foto apagada com sucesso!!!'); //Flash message
-            }
-            else
-                $msg->error('Oooops... Não foi possível apagar esta foto.');//Flash message
+        if($config['DISPLAY_MODE'] != "READ_ONLY") {
+            $msg = new Flash();
+            $gallery = new Gallery();
+
+            if (count($photo = $gallery->find($values[1])) > 0) //Check find
+            {
+                if (deleteFile(publicPath($photo['path']))) { //Try to delete file
+                    $gallery->delete($values[1]); //Delete database value
+                    $msg->success('Foto apagada com sucesso!!!'); //Flash message
+                } else
+                    $msg->error('Oooops... Não foi possível apagar esta foto.');//Flash message
+            } else
+                $msg->error('Oooops... A foto que você está procurando não existe.');//Flash message
+
+            return Redirect::to('/manager'); //Redirect
         }
-        else
-            $msg->error('Oooops... A foto que você está procurando não existe.');//Flash message
-
-        return Redirect::to('/manager'); //Redirect
+        else {
+            $msg->warning('Esta função não está disponível neste modo. Modo de exibição: Ativo.');//Flash message
+            return Redirect::to('/manager'); //Redirect
+        }
     }
 
     /**
@@ -67,29 +74,35 @@ class ManagerController extends Controller
      */
     public function add()
     {
+        $config = include_once configPath('app.php');
         $msg = new Flash();
-        $gallery = new Gallery();
 
-        $realName = Input::file('arquivo')["name"]; //Get real name
+        if($config['DISPLAY_MODE'] != "READ_ONLY") {
+            $gallery = new Gallery();
 
-        if($this->checkExtension($realName)) { //Check extension
-            if ($newName = $this->storeFile($realName)) { //Try to store file
-                $result = $gallery->save([
-                    'name' => $realName,
-                    'path' => $this->storagePath.$newName,
-                    'created_at' => date('d-m-Y H:i:s')
-                ]); //Store on DB
-            }
+            $realName = Input::file('arquivo')["name"]; //Get real name
+
+            if ($this->checkExtension($realName)) { //Check extension
+                if ($newName = $this->storeFile($realName)) { //Try to store file
+                    $result = $gallery->save([
+                        'name' => $realName,
+                        'path' => $this->storagePath . $newName,
+                        'created_at' => date('d-m-Y H:i:s')
+                    ]); //Store on DB
+                } else
+                    $msg->error('Não foi possivel armazenar o arquivo.');//Flash message
+            } else
+                $msg->error('Extensão inválida!!!');//Flash message
+
+            if ($this->redirect)
+                Redirect::to('/manager');//Redirect
             else
-                $msg->error('Não foi possivel armazenar o arquivo.');//Flash message
+                return true;
         }
-        else
-            $msg->error('Extensão inválida!!!');//Flash message
-
-        if($this->redirect)
-            Redirect::to('/manager');//Redirect
-        else
-            return true;
+        else {
+            $msg->warning('Esta função não está disponível neste modo. Modo de exibição: Ativo.');//Flash message
+            return Redirect::to('/manager'); //Redirect
+        }
     }
 
     /**
